@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import { useState } from "react";
 import useProfileStore from "../store/useProfileStore";
 import shallow from "zustand/shallow";
