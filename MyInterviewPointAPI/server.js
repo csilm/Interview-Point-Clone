@@ -25,14 +25,13 @@ app.use("/api/result", userResultRoutes);
 
 // connect to DB
 mongoose.set('strictQuery', true);
-mongoose
-  .connect(`${process.env.MONGO_DB_URL}`)
-  .then(() => {
-    // listen for request
-    app.listen(4000, () => {
-      console.log("I on listen for port 4000 😎");
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+try {
+  mongoose.connect(`${process.env.MONGO_DB_URL}`) 
+} catch (error) {
+  console.log(error);
+}
+
+// listen for request
+app.listen(4000, () => {
+  console.log("I on listen for port 4000 😎");
+});
