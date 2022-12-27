@@ -7,7 +7,7 @@ const userProfileRoutes = require("./routes/userProfileRoutes");
 const userResultRoutes = require("./routes/userResultRoutes");
 // express app
 const app = express();
-
+const port = 4000||process.env.PORT
 // middleware
 app.use(cors());
 app.use(express.json());
@@ -32,6 +32,6 @@ try {
 }
 
 // listen for request
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("I on listen for port 4000 😎");
 });
