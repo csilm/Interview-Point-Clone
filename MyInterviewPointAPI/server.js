@@ -24,6 +24,7 @@ app.use("/api/result", userResultRoutes);
 
 
 // connect to DB
+mongoose.set('strictQuery', true);
 mongoose
   .connect(`${process.env.MONGO_DB_URL}`)
   .then(() => {
